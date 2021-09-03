@@ -54,6 +54,7 @@ const propTypes = {
   starSize: PropTypes.number,
   starStyle: ViewPropTypes.style,
   selectedStar: PropTypes.func,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -77,6 +78,7 @@ const defaultProps = {
   starSize: 40,
   starStyle: {},
   selectedStar: () => {},
+  testID: ''
 };
 
 class StarRating extends Component {
@@ -114,6 +116,7 @@ class StarRating extends Component {
       reversed,
       starSize,
       starStyle,
+      testID,
     } = this.props;
 
     const newContainerStyle = {
@@ -129,6 +132,7 @@ class StarRating extends Component {
     for (let i = 0; i < maxStars; i++) {
       let starIconName = emptyStar;
       let finalStarColor = emptyStarColor;
+      const fullTestID = `${testID}-option-${i}`
 
       if (starsLeft >= 1) {
         starIconName = fullStar;
@@ -168,6 +172,7 @@ class StarRating extends Component {
             starIconName={starIconName}
             starSize={starSize}
             starStyle={starStyle}
+            testID={fullTestID}
           />
         </AnimatableView>
       );
