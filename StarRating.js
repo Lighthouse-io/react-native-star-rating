@@ -54,6 +54,7 @@ const propTypes = {
   starSize: PropTypes.number,
   starStyle: ViewPropTypes.style,
   selectedStar: PropTypes.func,
+  title: PropTypes.string,
 };
 
 const defaultProps = {
@@ -77,6 +78,7 @@ const defaultProps = {
   starSize: 40,
   starStyle: {},
   selectedStar: () => {},
+  title: '',
 };
 
 class StarRating extends Component {
@@ -114,6 +116,7 @@ class StarRating extends Component {
       reversed,
       starSize,
       starStyle,
+      title,
     } = this.props;
 
     const newContainerStyle = {
@@ -144,6 +147,7 @@ class StarRating extends Component {
 
       const starButtonElement = (
         <AnimatableView
+          accessibilityLabel={`${title} is ${rating} out of ${maxStars} stars`}
           key={i}
           ref={(node) => { this.starRef.push(node); }}
         >
