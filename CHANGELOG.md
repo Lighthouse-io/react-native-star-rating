@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.4] - 2025-12-17
+### Changed
+- Bump `react-native-vector-icons` from `4.5.0` to `10.2.0`.
+
 ## [1.1.0] - 2017-06-20
 ### Added
 - Add `CHANGELOG.md`.
